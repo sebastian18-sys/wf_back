@@ -1,0 +1,13 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ./deploy/Dockerfile
+      target: production
+    container_name: app-api-prod
+    image: wf_back:1.0.0
+    env_file: .env.production
+    ports:
+      - "3000:3000"
+    restart: always
+  
